@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Azure%20Sample%20Project",
+    "\\Azure%20Sample%20Project\\New Folder",
     "\\Template",
-    "\\Template\\aadap",
-    "\\Template\\aadap\\nsg"
+    "\\Template\\aadap"
   ],
-  "SelectedNode": "\\Template\\aadap\\nsg\\nsgmm1.azuredeploy.parameters.a.json",
+  "SelectedNode": "\\Azure%20Sample%20Project\\New Folder\\dbasndb.json",
   "PreviewInSolutionExplorer": false
 }
