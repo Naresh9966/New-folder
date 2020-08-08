@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "FinancialOwner": {
+      "value": "Sogeti-Capgemini"
+    },
+    "Environment": {
+      "value": "SharedServices"
+    },
+    "OpsOwner": {
+      "value": "Sogeti-Capgemini"
+    },
+    "DName": {
+      "value": "ss"
+    },
+    "DNo": {
+      "value": "501"
+    },
+    "AppName": {
+      "value": "aadap"
+    },
+    "KeysPermissions": {
+      "value": [ "Get", "List", "Update", "Create", "Import", "Delete", "Recover", "Backup", "Restore" ]
+    },
+    "SecretsPermissions": {
+      "value": [ "Get", "List", "Set", "Delete", "Recover", "Backup", "Resotre" ]
+    },
+    "SKUName": {
+      "value": "Standard"
+    },
+    "EnableForTemplateDeployment": {
+      "value": true
+    },
+    "EnableVaultForDeployment": {
+      "value": false
+    },
+    "EnableVaultForDiskEncryption": {
+      "value": false
+    }
+   }
+  }

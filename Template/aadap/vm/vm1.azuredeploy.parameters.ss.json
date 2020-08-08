@@ -1,0 +1,113 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "_artifactsLocation": {
+      "value": null
+    },
+    "_artifactsLocationSasToken": {
+      "value": null
+    },
+    "FinancialOwner": {
+      "value": "Sogeti-Capgemini"
+    },
+    "Environment": {
+      "value": "SharedServices"
+    },
+    "OpsOwner": {
+      "value": "Sogeti-Capgemini"
+    },
+    "Purpose": {
+      "value": "platform"
+    },
+    "DName": {
+      "value": "ss"
+    },
+    "DNo": {
+      "value": "501"
+    },
+    "Zone": {
+      "value": "mm"
+    },
+    "AppName": {
+      "value": "aadap"
+    },
+    "ExistingVirtualNetworkName": {
+      "value": "vnet-ss-501"
+    },
+    "ExistingVirtualNetworkRGName": {
+      "value": "rg-vnet-platform-ss-501"
+    },
+    "ExistingSubnetName": {
+      "value": "subnet-mmaadap-ss"
+    },
+    "ExistingKeyvaultName": {
+      "value": "keyvault-aadap-ss-501"
+    },
+    "ExistingKeyvaultRGName": {
+      "value": "rg-aadap-platform-ss-501"
+    },
+    "ExistingStorageAccountName": {
+      "value": "storagediagss"
+    },
+    "AdminUsername": {
+      "value": "enecoadmin"
+    },
+    "AvailabilitySet": {
+      "value": "Yes"
+    },
+    "AvailabilityZone": {
+      "value": [
+        1
+      ]
+    },
+    "OSVersion": {
+      "value": "2016-Datacenter"
+    },
+    "VMSize": {
+      "value": "Standard_D2s_v3"
+    },
+    "DataDiskSize": {
+      "value": [
+        {
+          "diskSizeGB": 100,
+          "lun": 0,
+          "createOption": "Empty"
+        }
+      ]
+    },
+    "PublicIPAddress": {
+      "value": "None"
+    },
+    "WorkspaceRG": {
+      "value": "rg-oms-platform-ss-501"
+    },
+    "WorkspaceName": {
+      "value": "oms-servicenow-ss-501"
+    },
+    "BackupEnable": {
+      "value": "No"
+    },
+    "BackupVaultRGName": {
+      "value": "rg-backup-platform-ss-501"
+    },
+    "BackupVaultName": {
+      "value": "vault-ss"
+    },
+    "BackupFabricName": {
+      "value": "Azure"
+    },
+    "BackupPolicyName": {
+      "value": "DefaultPolicy"
+    },
+    "Daily Power On/Off Schedule": {
+      "value": "No"
+    },
+    "PowerOnSchedule": {
+      "value": 6
+    },
+    "PowerOffSchedule": {
+      "value": 19
+    }
+  }
+}

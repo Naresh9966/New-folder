@@ -1,0 +1,353 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "FinancialOwner": {
+      "value": "Sogeti-Capgemini"
+    },
+    "Environment": {
+      "value": "SharedServices"
+    },
+    "OpsOwner": {
+      "value": "Sogeti-Capgemini"
+    },
+    "DName": {
+      "value": "ss"
+    },
+    "Zone": {
+      "value": "mm"
+    },
+    "AppName": {
+      "value": "aadap"
+    },
+    "NSGProperties": {
+      "value": {
+        "SecurityRules": [
+          {
+            "name": "ALLOW_LOCALSUBNET_IN",
+            "properties": {
+              "protocol": "*",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "10.73.0.96/28",
+              "destinationAddressPrefix": "10.73.0.96/28",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          },
+          {
+            "name": "ALLOW_CFJUMPBOX_IN",
+            "properties": {
+              "description": "Allow traffic from CF Jumpbox",
+              "protocol": "*",
+              "access": "Allow",
+              "priority": 101,
+              "direction": "Inbound",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "10.73.0.64/28",
+              "destinationAddressPrefix": "10.73.0.96/28",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          },
+          {
+            "name": "ALLOW_LOGICMONITOR_IN",
+            "properties": {
+              "description": "Allow traffic from LogicMonitor collector",
+              "protocol": "*",
+              "access": "Allow",
+              "priority": 102,
+              "direction": "Inbound",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "10.73.0.64/28",
+              "destinationAddressPrefix": "10.73.0.96/28",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          },
+          {
+            "name": "ALLOW_SERVICENOW_IN",
+            "properties": {
+              "description": "Allow traffic from ServiceNow MID server",
+              "protocol": "*",
+              "access": "Allow",
+              "priority": 103,
+              "direction": "Inbound",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "10.73.0.0/28",
+              "destinationAddressPrefix": "10.73.0.96/28",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [
+                "22",
+                "53",
+                "80",
+                "135",
+                "137",
+                "161",
+                "162",
+                "389",
+                "443",
+                "445",
+                "1027",
+                "5985",
+                "5988",
+                "5989",
+                "24158",
+                "49152-65535"
+              ],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": [],
+              "destinationPortRange": ""
+            }
+          },
+          {
+            "name": "ALLOW_NESSUS_IN",
+            "properties": {
+              "description": "Allow traffic from Nessus scanner",
+              "protocol": "*",
+              "access": "Allow",
+              "priority": 104,
+              "direction": "Inbound",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "10.73.0.112/28",
+              "destinationAddressPrefix": "10.73.0.96/28",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          },
+          {
+            "name": "DENY_All_IN",
+            "properties": {
+              "description": "Deny all inbound traffic",
+              "protocol": "*",
+              "access": "Deny",
+              "priority": 4096,
+              "direction": "Inbound",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          },
+          {
+            "name": "ALLOW_LOCALSUBNET_OUT",
+            "properties": {
+              "description": "Allow traffic within the subnet",
+              "protocol": "*",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Outbound",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "10.73.0.96/28",
+              "destinationAddressPrefix": "10.73.0.96/28",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          },
+          {
+            "name": "ALLOW_DNS_OUT",
+            "properties": {
+              "description": "Allow DNS resolving",
+              "protocol": "UDP",
+              "access": "Allow",
+              "priority": 101,
+              "direction": "Outbound",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "10.73.0.96/28",
+              "destinationAddressPrefix": "Internet",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [
+                "53"
+              ],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": [],
+              "destinationPortRange": ""
+            }
+          },
+          {
+            "name": "ALLOW_INTERNET_OUT",
+            "properties": {
+              "description": "Allow outbound traffic to Internet",
+              "protocol": "TCP",
+              "access": "Allow",
+              "priority": 102,
+              "direction": "Outbound",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "10.73.0.96/28",
+              "destinationAddressPrefix": "Internet",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [
+                "80",
+                "443",
+                "1688"
+              ],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": [],
+              "destinationPortRange": ""
+            }
+          },
+          {
+            "name": "ALLOW_DC_UDP_OUT",
+            "properties": {
+              "description": "Allow UDP traffic to ee.intern DomainControllers",
+              "protocol": "UDP",
+              "access": "Allow",
+              "priority": 103,
+              "direction": "Outbound",
+              "sourcePortRange": "*",
+              "destinationPortRange": "",
+              "sourceAddressPrefix": "10.73.0.96/28",
+              "destinationAddressPrefix": "10.73.0.128/28",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [
+                "53",
+                "88",
+                "123",
+                "137",
+                "138",
+                "389",
+                "445",
+                "464",
+                "49152-65535"
+              ],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          },
+          {
+            "name": "ALLOW_DC_TCP_OUT",
+            "properties": {
+              "description": "Allow TCP traffic to ee.intern DomainControllers",
+              "protocol": "TCP",
+              "access": "Allow",
+              "priority": 104,
+              "direction": "Outbound",
+              "sourcePortRange": "*",
+              "destinationPortRange": "",
+              "sourceAddressPrefix": "10.73.0.96/28",
+              "destinationAddressPrefix": "10.73.0.128/28",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [
+                "42",
+                "53",
+                "88",
+                "135",
+                "139",
+                "389",
+                "445",
+                "464",
+                "636",
+                "3268",
+                "3269",
+                "5722",
+                "9389",
+                "49152-65535"
+              ],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          },
+          {
+            "name": "ALLOW_CGDC_TCP_OUT",
+            "properties": {
+              "description": "Allow TCP traffic to Infoblox and ee.intern DomainControllers",
+              "protocol": "UDP",
+              "access": "Allow",
+              "priority": 105,
+              "direction": "Outbound",
+              "sourcePortRange": "*",
+              "destinationPortRange": "",
+              "sourceAddressPrefix": "10.73.0.96/28",
+              "destinationAddressPrefix": "",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [
+                "53",
+                "389"
+              ],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": [
+                "10.213.26.14",
+                "10.213.66.13",
+                "10.213.66.14",
+                "10.213.66.17",
+                "10.213.66.18",
+                "10.213.249.13"
+              ]
+            }
+          },
+          {
+            "name": "DENY_ALL_OUT",
+            "properties": {
+              "description": "Deny all other outbound traffic",
+              "protocol": "*",
+              "access": "Deny",
+              "priority": 4096,
+              "direction": "Outbound",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          }
+          //{
+          //  "name": "ALLOW_QRADAR_SCAN_IN",
+          //  "properties": {
+          //    "protocol": "*",
+          //    "access": "Allow",
+          //    "priority": 2001,
+          //    "direction": "Inbound",
+          //    "sourcePortRange": "*",
+          //    "sourceAddressPrefix": "10.213.226.66/32",
+          //    "destinationAddressPrefix": "10.73.0.96/28",
+          //    "sourcePortRanges": [],
+          //    "destinationPortRanges": [ "135", "139", "445", "49152-65535" ],
+          //    "sourceAddressPrefixes": [],
+          //    "destinationAddressPrefixes": []
+          //  }
+          //},
+          //{
+          //  "name": "ALLOW_QRADAR_SCAN_OUT",
+          //  "properties": {
+          //    "protocol": "*",
+          //    "access": "Allow",
+          //    "priority": 2001,
+          //    "direction": "Outbound",
+          //    "sourcePortRange": "*",
+          //    "sourceAddressPrefix": "10.73.0.96/28",
+          //    "destinationAddressPrefix": "10.213.226.66/32",
+          //    "sourcePortRanges": [],
+          //    "destinationPortRanges": [ "135", "139", "445", "49152-65535" ],
+          //    "sourceAddressPrefixes": [],
+          //    "destinationAddressPrefixes": []
+          //  }
+          //}
+        ]
+      }
+    }
+  }
+}
