@@ -4,8 +4,9 @@
     "\\Azure%20Sample%20Project",
     "\\Azure%20Sample%20Project\\New Folder",
     "\\Template",
-    "\\Template\\aadap"
+    "\\Template\\aadap",
+    "\\Template\\aadap\\keyvault"
   ],
-  "SelectedNode": "\\Azure%20Sample%20Project\\New Folder\\dbasndb.json",
+  "SelectedNode": "\\Template\\aadap\\keyvault\\kv1.azuredeploy.parameters.a.json",
   "PreviewInSolutionExplorer": false
 }

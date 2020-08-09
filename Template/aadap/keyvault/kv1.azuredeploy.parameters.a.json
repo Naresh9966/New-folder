@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "FinancialOwner": {
-        "value": "Sogeti-Capgemini"
+        "value": "Sogeti-Capgemini1"
       },
       "Environment": {
         "value": "Acceptance"
